@@ -19,15 +19,18 @@
       <a href="https://github.com/vuejs/vue-router/" target="_blank">vue-router</a> for routing and
       <a href="https://github.com/vuejs/vuex/" target="_blank">vuex</a> for state management.
     </p>
+      <test></test>
   </div>
+    
 </template>
 
 <script>
-import Hello from './components/Hello'
-
+import Hello from './components/Hello';
+import Test from './components/Test';
 export default {
   components: {
-    Hello
+    Hello,
+    Test
   }
 }
 </script>
