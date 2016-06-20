@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <p>this is an hello page to test router~</p>
   </div>
 </template>
 
@@ -12,7 +13,7 @@ export default {
       // with hot-reload because the reloaded component
       // preserves its current state and we are modifying
       // its initial state.
-      msg: 'Hello World!'
+      msg: 'Vue TODO list!'
     }
   }
 }
