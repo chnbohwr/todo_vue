@@ -4,6 +4,7 @@ import login from '../components/login';
 import Hello from '../components/Hello';
 import Index from '../components/Index';
 import Todo from '../components/Todo';
+import About from '../components/About';
 
 Vue.use(VueRouter);
 
@@ -30,6 +31,10 @@ router.map({
                 name: 'Todo',
                 component: Todo,
                 need_auth: true
+            },
+            '/about':{
+                name: 'About',
+                component: About
             }
         }
     }
