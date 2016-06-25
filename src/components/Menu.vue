@@ -1,8 +1,8 @@
 <template>
     <ul class="nav nav-pills nav-stacked">
-        <li><a v-link="'/hello'">Hello</a></li>
-        <li><a v-link="'/todo/'">Todo</a></li>
-        <li><a>About</a></li>
+        <li v-link-active><a v-link="'/hello'">Hello</a></li>
+        <li v-link-active><a v-link="'/todo'">Todo</a></li>
+        <li v-link-active><a>About</a></li>
     </ul>
 </template>
 <style scoped="true">

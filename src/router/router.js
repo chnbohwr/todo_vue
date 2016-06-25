@@ -7,7 +7,9 @@ import Todo from '../components/Todo';
 
 Vue.use(VueRouter);
 
-const router = new VueRouter();
+const router = new VueRouter({
+    linkActiveClass: 'active'
+});
 const App = Vue.extend({});
 
 router.map({
@@ -21,13 +23,27 @@ router.map({
         subRoutes: {
             '/hello': {
                 name: 'Hello',
-                component: Hello
+                component: Hello,
+                need_auth: true
             },
             '/todo': {
                 name: 'Todo',
-                component: Todo
+                component: Todo,
+                need_auth: true
             }
         }
+    }
+});
+
+router.redirect({
+    '/': '/hello'
+});
+
+router.beforeEach(function (transition) {
+    if (transition.to.need_auth === true && !window.isAuth) {
+        transition.redirect('login');
+    } else {
+        transition.next();
     }
 });
 
