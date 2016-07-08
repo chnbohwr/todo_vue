@@ -11,6 +11,7 @@ Vue.use(VueRouter);
 const router = new VueRouter({
     linkActiveClass: 'active'
 });
+
 const App = Vue.extend({});
 
 router.map({
@@ -44,9 +45,11 @@ router.redirect({
     '/': '/hello'
 });
 
+// auth condition
 router.beforeEach(function (transition) {
     if (transition.to.need_auth === true && !window.isAuth) {
-        transition.redirect('login');
+        //transition.redirect('login');
+        transition.next();
     } else {
         transition.next();
     }
